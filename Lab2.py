@@ -38,11 +38,8 @@ class Polynomial:
         if not isinstance(value, int):
             raise ValueError("The parameter must be an Integer")
 
-        result = 0
-        for i in range(len(self.coef)):
-            result += self.coef[i] * (value**i)
-        
-        return result
+        result = [self.coef[i] * (value**i) for i in range(len(self.coef))]
+        return sum(result)
     
     def __repr__(self):
         factors = []
