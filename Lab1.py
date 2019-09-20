@@ -102,5 +102,3 @@ def GuessGame(word):
             print("Wrong!")
         
         counter += 1
-
-GuessGame('pokemon')
