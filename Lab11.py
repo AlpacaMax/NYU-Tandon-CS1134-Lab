@@ -249,12 +249,3 @@ def reverse_dll_by_node(dll):
 
         start = start.next
         end = end.prev
-
-dll = DoublyLinkedList()
-dll.add_last(5)
-dll.add_last(7)
-dll.add_last(3)
-dll.add_last(10)
-print(dll)
-reverse_dll_by_node(dll)
-print(dll)
