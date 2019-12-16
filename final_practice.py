@@ -71,8 +71,17 @@ class ExtendedPartiesQueue:
     def __repr__(self):
         return ", ".join("<{}, {}>".format(name, self.name_size_map[name]) for name in self.data)
 
+def level_list(root, level): #Dec, 18, 2017 final q5
+    if (root is None):
+        return []
+    elif (level == 0):
+        return [root.data]
+    else:
+        left_res = level_list(root.left, level - 1)
+        right_res = level_list(root.right, level - 1)
+        return left_res + right_res
+
 def main():
-    '''
     l3 = LinkedBinaryTree.Node(1)
     l2 = LinkedBinaryTree.Node(2, l3, None)
     l4 = LinkedBinaryTree.Node(1)
@@ -86,8 +95,8 @@ def main():
     root = LinkedBinaryTree.Node(11, l2, r2)
     bt = LinkedBinaryTree()
     bt.root = root
-    '''
 
+    '''
     pq = ExtendedPartiesQueue()
     pq.enq_party("Jeff", 3)
     print(pq)
@@ -103,5 +112,8 @@ def main():
     print(pq)
     pq.deq_first_party()
     print(pq)
+    '''
+
+    print(level_list(bt.root, 5))
 
 main()
